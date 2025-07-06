@@ -1,3 +1,25 @@
+*ABOUT* 
+------------------
+🔐 FastAPI JWT Authentication API — Project Description
+This project is a secure authentication API built using FastAPI, which implements token-based authentication using JWT (JSON Web Tokens). It simulates a login system with a dummy user database and includes functionality for:
+
+✅ Key Features:
+User login endpoint (/token) that accepts username & password, validates them, and returns a signed JWT.
+
+Protected routes (/users/me, /users/me/items) that require a valid JWT in the Authorization header.
+
+Token verification with expiration support and proper exception handling.
+
+Password hashing using bcrypt via passlib.
+
+Environment configuration through .env variables for security keys and algorithms.
+
+Token extraction using FastAPI’s OAuth2 flow with OAuth2PasswordBearer.
+
+Test route (/test/{item_id}) for general server checks.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
 *functionalities* 
 ------------------
 1. user_name and password for every single user
