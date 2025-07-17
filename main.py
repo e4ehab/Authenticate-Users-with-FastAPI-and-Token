@@ -6,6 +6,9 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 import os
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 """
 to run the server :-
@@ -15,6 +18,19 @@ to run the server :-
 3. uvicorn main:app --reload
 """
 app = FastAPI()
+
+# allow cores to enable requestss from  http://127.0.0.1:5500/
+app.add_middleware( 
+    CORSMiddleware,
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 load_dotenv() 
 SECRET_KEY = os.getenv("SECRET_KEY")
